@@ -1,57 +1,63 @@
-﻿int m = 0;
-int n = 0;
-Console.Write("Введите количество строк: ");
-int.TryParse(Console.ReadLine(), out m);
-Console.Write("Введите количество столбцов: ");
-int.TryParse(Console.ReadLine(), out n);
-int[,] array = new int[m,n];
-for (int i = 0; i < m; i++)
+﻿int i, j;
+int[,] a = new int[2, 2];
+Console.WriteLine("Enter no for 2*2 matrix");
+for (i = 0; i < 2; i++)
 {
-    for (int j = 0; j<n; j++)
+    for (j = 0; j < 2; j++)
     {
-        array[i,j] = new Random().Next(10);
+        a[i, j] = int.Parse(Console.ReadLine());
     }
 }
-void PrintArray (int [,] array)
+Console.WriteLine("First matrix is:");
+for (i = 0; i < 2; i++)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (j = 0; j < 2; j++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-           Console.Write($"{array[i,j]} "); 
-        }
-    Console.WriteLine();   
+        Console.Write(a[i,j]+"\t");
     }
-        
+    Console.WriteLine(); 
 }
-PrintArray(array);
-Console.WriteLine();
-int[] C = new int[m]; //массив, где будут собираться суммы каждой строки
-for (int i = 0; i < m; i++) //считаем сумму построчно
-{
-    int Summa = 0;
-    for (int j = 0; j < n; j++)
-        {
-            Summa = Summa + array[i,j];
-        }
-        C[i]=Summa;
-        Summa = 0;
-}
-for (int i = 0; i < C.Length; i++)
-{
-    Console.Write($"{C[i]} ");
-}
-      
-Console.WriteLine();
-int imin = 0;
-int min = 100000;
-for (int i = 0; i < m; i++) //ищем минимальный элемент
-   {
-    if (C[i] < min)
-    {
-        min = C[i];
-        imin = i;
-    }
-   }         
 
-Console.WriteLine($"{imin+1} строка");         
+
+int[,] b = new int[2, 2];
+Console.WriteLine("Enter no for 2*2 matrix");
+for (i = 0; i < 2; i++)
+{
+    for (j = 0; j < 2; j++)
+    {
+        b[i, j] = int.Parse(Console.ReadLine());
+    }
+}
+Console.WriteLine("second matrix is:");
+for (i = 0; i < 2; i++)
+{
+    for (j = 0; j < 2; j++)
+    {
+        Console.Write(b[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("Matrix multiplication is:");
+int[,] c = new int[2, 2];
+for (i = 0; i < 2; i++)
+{
+    for (j = 0; j < 2; j++)
+    {
+
+
+        c[i,j]=0;
+            for (int k = 0; k < 2; k++)
+            {
+                c[i, j] +=  a[i, k] * b[k, j];
+            }
+        }
+}
+for (i = 0; i < 2; i++)
+{
+    for (j = 0; j < 2; j++)
+    {
+        Console.Write(c[i, j]+"\t");
+    }
+    Console.WriteLine();
+}
