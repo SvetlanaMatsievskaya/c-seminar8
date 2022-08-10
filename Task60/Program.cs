@@ -5,7 +5,7 @@ for (int i =0; i < myArray.GetLength(0); i++)
    {
     for (int k = 0; k < myArray.GetLength(2); k++)
     {
-     myArray[i,j,k] = new Random().Next(100);   
+     myArray[i,j,k] = new Random().Next(10,100);   
     }
    }
 }
