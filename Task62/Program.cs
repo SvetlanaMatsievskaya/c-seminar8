@@ -1,4 +1,4 @@
-﻿int m = 6;
+﻿int m = 4;
 
 int [,] array =  new int [m,m];
 void PrintArray (int [,] array)
