@@ -39,7 +39,7 @@ for (int i = 0; i < m; i++)
 }
 for (int i = 0; i < C.Length; i++)
 {
-    Console.Write($"{C[i]} ");
+    Console.Write($"Сумма {i+1} строки равна {C[i]} \n");
 }
       
 Console.WriteLine();
@@ -54,4 +54,4 @@ for (int i = 0; i < m; i++)
     }
    }         
 
-Console.WriteLine($"{imin+1} строка");         
+Console.WriteLine($"{imin+1} строка является строкой с наименьшей суммой");         
